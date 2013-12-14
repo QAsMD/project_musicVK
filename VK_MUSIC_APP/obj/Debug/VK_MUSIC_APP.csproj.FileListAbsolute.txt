@@ -1,0 +1,11 @@
+Z:\Documents\Project\project_music\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe.config
+Z:\Documents\Project\project_music\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe
+Z:\Documents\Project\project_music\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.pdb
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.csprojResolveAssemblyReference.cache
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.Form1.resources
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.Properties.Resources.resources
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.Settings.resources
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.SetUpMusic.resources
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.csproj.GenerateResource.Cache
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.exe
+Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.pdb
