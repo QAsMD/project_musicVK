@@ -9,3 +9,6 @@ Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.SetUpMusi
 Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.csproj.GenerateResource.Cache
 Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.exe
 Z:\Documents\Project\project_music\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.pdb
+C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные документы\project_git\project_musicVK\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe.config
+C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные документы\project_git\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.exe
+C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные документы\project_git\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.pdb
