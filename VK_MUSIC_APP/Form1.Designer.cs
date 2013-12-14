@@ -73,20 +73,20 @@
             // sETTINGSToolStripMenuItem
             // 
             this.sETTINGSToolStripMenuItem.Name = "sETTINGSToolStripMenuItem";
-            this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.sETTINGSToolStripMenuItem.Text = "SETTINGS";
             this.sETTINGSToolStripMenuItem.Click += new System.EventHandler(this.sETTINGSToolStripMenuItem_Click);
             // 
             // aBOUTToolStripMenuItem
             // 
             this.aBOUTToolStripMenuItem.Name = "aBOUTToolStripMenuItem";
-            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aBOUTToolStripMenuItem.Text = "ABOUT";
             // 
             // eXITToolStripMenuItem
             // 
             this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
-            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
@@ -150,6 +150,7 @@
             this.picBox_buttonPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox_buttonPrev.TabIndex = 10;
             this.picBox_buttonPrev.TabStop = false;
+            this.picBox_buttonPrev.Click += new System.EventHandler(this.picBox_buttonPrev_Click);
             // 
             // picBox_buttonPlay
             // 
