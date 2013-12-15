@@ -47,7 +47,7 @@ namespace VK_MUSIC_APP
             StreamWriter WriteData = new StreamWriter("config.txt");
             foreach (string key in info_parameter.Keys)
             {
-                WriteData.Write(key, info_parameter[key] + "\n");
+                WriteData.Write(key + ":" + info_parameter[key] + "\n");
             }
             WriteData.Close();
         }

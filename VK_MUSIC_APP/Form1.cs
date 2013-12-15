@@ -106,36 +106,37 @@ namespace VK_MUSIC_APP
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (this.bPlay)
-            {
-                pl.Pause();
-                bPlay = false;
-            }
-            else
-            { 
+            if (pl.IsPaused() == true)
                 pl.Play(true);
-                bPlay = true;
-            }
-              
+            else
+                pl.Pause();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            move_music_list++;
-            pl.Close();
-            pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
-            lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
-            pl.Play(false);
+            if (move_music_list < htCollect_Audio.Length) { move_music_list++; };
+            if (pl.IsOpen() == true)
+                pl.Close();
+            if (pl.IsOpen() == false)
+            {
+                pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
+                lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
+                pl.Play(false);
+            }
         }
 
         private void picBox_buttonPrev_Click(object sender, EventArgs e)
         {
-            if ( move_music_list > 0 ) move_music_list--;
-           
-            pl.Close();
-            pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
-            lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
-            pl.Play(false);
+            if (move_music_list > 0) move_music_list--;
+            if (pl.IsOpen() == true)
+                pl.Close();
+            if (pl.IsOpen() == false)
+            {
+                pl.Close();
+                pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
+                lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
+                pl.Play(false);
+            }
         }
 
         private void lIBToolStripMenuItem_Click(object sender, EventArgs e)
