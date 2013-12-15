@@ -26,6 +26,12 @@ namespace VK_MUSIC_APP
             var data_audio = GetMethod(ht_API_METHODS["audio.get"]);
             return data_audio;
         }
+
+        public string user_get()
+        {
+            var data_user = GetMethod(ht_API_METHODS["users.get"]);
+            return data_user;
+        }
         private string GetMethod(string postUrl)
         {
             WebRequest wrGETURL;

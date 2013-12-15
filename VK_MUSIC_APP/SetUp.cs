@@ -13,6 +13,8 @@ namespace VK_MUSIC_APP
 {
     public partial class SetUpMusic : Form
     {
+        IDictionary<string, string> parametrs = new Dictionary<string, string>();
+        WorkFiles record_config = new WorkFiles("config.txt");
         public SetUpMusic()
         {
             InitializeComponent();
@@ -35,22 +37,17 @@ namespace VK_MUSIC_APP
                 try
                 {
                     int var_id_user = Convert.ToInt32(text_IdUser.Text);
-                    record_config();
+                    parametrs.Add("uid", text_IdUser.Text);
+                    parametrs.Add("token", text_AccessToken.Text);
+                    parametrs.Add("library", "desktop");
+                    record_config.write_data_file(parametrs);
                     this.Close();
                 }
-                catch //asd
+                catch
                 { MessageBox.Show("Поле ID_User должен состоять из цифр"); }
             }
             else
             { MessageBox.Show("Проверьте правильность ввода"); }
-        }
-
-        private void record_config()
-        {
-            StreamWriter WriteData = new StreamWriter("config.txt");
-            WriteData.Write("Uid_User:" + text_IdUser.Text + "\n");
-            WriteData.Write("Access_Token:" + text_AccessToken.Text + "\n");
-            WriteData.Close();
         }
     }
 }
