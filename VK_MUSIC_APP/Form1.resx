@@ -264,6 +264,9 @@
         XWAK0K19cEV8/gkwTBvwf0v+uqfCdfpwzed5+5H431Kj8Qti8o35XYVbmAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="folder_LIB_MUSIC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>40</value>
   </metadata>

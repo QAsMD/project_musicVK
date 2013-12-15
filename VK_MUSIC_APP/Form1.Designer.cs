@@ -32,6 +32,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mENUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sETTINGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lIBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sETUPCONFIGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AvatarUser = new System.Windows.Forms.PictureBox();
@@ -43,6 +45,7 @@
             this.picBox_buttonPlay = new System.Windows.Forms.PictureBox();
             this.picBox_buttonNext = new System.Windows.Forms.PictureBox();
             this.lab_infoSong = new System.Windows.Forms.Label();
+            this.folder_LIB_MUSIC = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPrev)).BeginInit();
@@ -72,21 +75,36 @@
             // 
             // sETTINGSToolStripMenuItem
             // 
+            this.sETTINGSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lIBToolStripMenuItem,
+            this.sETUPCONFIGToolStripMenuItem});
             this.sETTINGSToolStripMenuItem.Name = "sETTINGSToolStripMenuItem";
-            this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sETTINGSToolStripMenuItem.Text = "SETTINGS";
-            this.sETTINGSToolStripMenuItem.Click += new System.EventHandler(this.sETTINGSToolStripMenuItem_Click);
+            // 
+            // lIBToolStripMenuItem
+            // 
+            this.lIBToolStripMenuItem.Name = "lIBToolStripMenuItem";
+            this.lIBToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.lIBToolStripMenuItem.Text = "LIBRARY_MUSIC";
+            this.lIBToolStripMenuItem.Click += new System.EventHandler(this.lIBToolStripMenuItem_Click);
+            // 
+            // sETUPCONFIGToolStripMenuItem
+            // 
+            this.sETUPCONFIGToolStripMenuItem.Name = "sETUPCONFIGToolStripMenuItem";
+            this.sETUPCONFIGToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.sETUPCONFIGToolStripMenuItem.Text = "SETUP_CONFIG";
             // 
             // aBOUTToolStripMenuItem
             // 
             this.aBOUTToolStripMenuItem.Name = "aBOUTToolStripMenuItem";
-            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aBOUTToolStripMenuItem.Text = "ABOUT";
             // 
             // eXITToolStripMenuItem
             // 
             this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
-            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
@@ -183,6 +201,10 @@
             this.lab_infoSong.TabIndex = 13;
             this.lab_infoSong.Text = "label3";
             // 
+            // folder_LIB_MUSIC
+            // 
+            this.folder_LIB_MUSIC.Description = "Укажите папку для хранения вашей музыкальной коллекции VK.COM";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -236,6 +258,9 @@
         private System.Windows.Forms.PictureBox picBox_buttonPlay;
         private System.Windows.Forms.PictureBox picBox_buttonNext;
         private System.Windows.Forms.Label lab_infoSong;
+        private System.Windows.Forms.ToolStripMenuItem lIBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sETUPCONFIGToolStripMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog folder_LIB_MUSIC;
 
     }
 }

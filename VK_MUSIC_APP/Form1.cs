@@ -18,17 +18,17 @@ namespace VK_MUSIC_APP
 {
     public partial class Form1 : Form
     {
-#region Fields
+        #region Fields
         private Player pl = new Player();
-        //private string sSize_Cache = "";
         private string sVK_ID = "";
         private string sACCESS_TOKEN = "";
-        //private string sFolderLib = "";
+        private string sFolderLib = "";
+        WorkFiles builder = new WorkFiles("config.txt");
         private Hashtable[] htCollect_Audio;
         private int move_music_list = 0;
         private NetworkApiVK lib_api;
         private bool bPlay = false;
-#endregion
+        #endregion
         public Form1()
         {
             PreInitializeComponent();
@@ -40,38 +40,18 @@ namespace VK_MUSIC_APP
 
         private void PreInitializeComponent()
         {
-            if (File.Exists("config.txt") == true)
-            {
-                read_config();
-            }
-            else
-            {
-                SetUpMusic setProgram = new SetUpMusic();
-                setProgram.ShowDialog();
-                read_config();
-            }
-        }
-
-        private void read_config()
-        {
-            StreamReader read_config = new StreamReader("config.txt");
-            var read_data = read_config.ReadLine();
-            sVK_ID = read_data.Split(':')[1];
-            read_data = read_config.ReadLine();
-            sACCESS_TOKEN = read_data.Split(':')[1];
-            read_config.Close();
+            string something;
+            var data_file = builder.read_file();
+            sVK_ID = data_file["uid"];
+            sACCESS_TOKEN = data_file["token"];
+            if (data_file.TryGetValue("library", out something) == true)
+                sFolderLib = data_file["library"];
             lib_api = new NetworkApiVK(sVK_ID, sACCESS_TOKEN);
         }
 
         private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void sETTINGSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Settings fSettings = new Settings();
-            fSettings.ShowDialog();
         }
 
         private void start_program()
@@ -156,6 +136,14 @@ namespace VK_MUSIC_APP
             pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
             lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
             pl.Play(false);
+        }
+
+        private void lIBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folder_LIB_MUSIC.ShowDialog();
+            IDictionary<string, string> lib_dict = new Dictionary<string, string>();
+            lib_dict.Add("library", folder_LIB_MUSIC.SelectedPath);
+            builder.write_data_file(lib_dict);
         }
     }
 }
