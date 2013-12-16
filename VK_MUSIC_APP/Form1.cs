@@ -27,7 +27,8 @@ namespace VK_MUSIC_APP
         private Hashtable[] htCollect_Audio;
         private int move_music_list = 0;
         private NetworkApiVK lib_api;
-        private bool bPlay = false;
+        private int time_Passed = 0; // времени прошло с начала трека
+        private int iTime_max = 300; //общая длина трека //300 взято для проверки
         #endregion
         public Form1()
         {
@@ -61,6 +62,7 @@ namespace VK_MUSIC_APP
             pl.Open(url_music);
         }
 
+        
         public Hashtable[] XML_PARSE(String XML_DATA)
         {
             XmlReader reader = XmlReader.Create(new StringReader(XML_DATA));
@@ -106,14 +108,26 @@ namespace VK_MUSIC_APP
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (pl.IsPaused() == true) //
+
+            if ( pl.IsPaused() == true ) //
+            {
                 pl.Play(true);
+                timer1.Start();
+            }
             else
+            {
                 pl.Pause();
+                timer1.Stop();
+            }
+                
+           
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            time_Passed = 0; //обнуляем счетчик времени 
+            timer1.Start();
+
             if (move_music_list < htCollect_Audio.Length) { move_music_list++; };
             if (pl.IsOpen() == true)
                 pl.Close();
@@ -125,8 +139,13 @@ namespace VK_MUSIC_APP
             }
         }
 
+        
         private void picBox_buttonPrev_Click(object sender, EventArgs e)
         {
+            
+            time_Passed = 0;
+            timer1.Start();
+            
             if (move_music_list > 0) move_music_list--;
             if (pl.IsOpen() == true)
                 pl.Close();
@@ -143,6 +162,22 @@ namespace VK_MUSIC_APP
         {
             folder_LIB_MUSIC.ShowDialog();
             builder.write_data_file(new Dictionary<string, string>() { { "library", folder_LIB_MUSIC.SelectedPath } });
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void statusStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time_Passed++;
+            toolStripProgressBar1.Value = iTime_max - time_Passed;
         }
     }
 }
