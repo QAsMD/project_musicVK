@@ -48,14 +48,12 @@
             this.lab_infoSong = new System.Windows.Forms.Label();
             this.folder_LIB_MUSIC = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.ProgressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPrev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonNext)).BeginInit();
-            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -157,7 +155,7 @@
             // 
             // lab_NamePlayer
             // 
-            this.lab_NamePlayer.Location = new System.Drawing.Point(267, 137);
+            this.lab_NamePlayer.Location = new System.Drawing.Point(243, 153);
             this.lab_NamePlayer.Name = "lab_NamePlayer";
             this.lab_NamePlayer.Size = new System.Drawing.Size(100, 22);
             this.lab_NamePlayer.TabIndex = 9;
@@ -167,7 +165,7 @@
             // picBox_buttonPrev
             // 
             this.picBox_buttonPrev.Image = ((System.Drawing.Image)(resources.GetObject("picBox_buttonPrev.Image")));
-            this.picBox_buttonPrev.Location = new System.Drawing.Point(182, 177);
+            this.picBox_buttonPrev.Location = new System.Drawing.Point(158, 215);
             this.picBox_buttonPrev.Name = "picBox_buttonPrev";
             this.picBox_buttonPrev.Size = new System.Drawing.Size(79, 56);
             this.picBox_buttonPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,7 +176,7 @@
             // picBox_buttonPlay
             // 
             this.picBox_buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("picBox_buttonPlay.Image")));
-            this.picBox_buttonPlay.Location = new System.Drawing.Point(267, 162);
+            this.picBox_buttonPlay.Location = new System.Drawing.Point(243, 201);
             this.picBox_buttonPlay.Name = "picBox_buttonPlay";
             this.picBox_buttonPlay.Size = new System.Drawing.Size(100, 86);
             this.picBox_buttonPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -189,7 +187,7 @@
             // picBox_buttonNext
             // 
             this.picBox_buttonNext.Image = ((System.Drawing.Image)(resources.GetObject("picBox_buttonNext.Image")));
-            this.picBox_buttonNext.Location = new System.Drawing.Point(373, 177);
+            this.picBox_buttonNext.Location = new System.Drawing.Point(349, 215);
             this.picBox_buttonNext.Name = "picBox_buttonNext";
             this.picBox_buttonNext.Size = new System.Drawing.Size(81, 56);
             this.picBox_buttonNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,7 +198,7 @@
             // lab_infoSong
             // 
             this.lab_infoSong.AutoSize = true;
-            this.lab_infoSong.Location = new System.Drawing.Point(12, 252);
+            this.lab_infoSong.Location = new System.Drawing.Point(21, 297);
             this.lab_infoSong.Name = "lab_infoSong";
             this.lab_infoSong.Size = new System.Drawing.Size(66, 24);
             this.lab_infoSong.TabIndex = 13;
@@ -215,22 +213,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // toolStripProgressBar1
+            // ProgressBar1
             // 
-            this.toolStripProgressBar1.Maximum = 300;
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
-            // statusStrip2
-            // 
-            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 469);
-            this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(595, 22);
-            this.statusStrip2.TabIndex = 15;
-            this.statusStrip2.Text = "statusStrip2";
-            this.statusStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip2_ItemClicked);
+            this.ProgressBar1.Location = new System.Drawing.Point(25, 178);
+            this.ProgressBar1.Name = "ProgressBar1";
+            this.ProgressBar1.Size = new System.Drawing.Size(558, 17);
+            this.ProgressBar1.TabIndex = 16;
             // 
             // Form1
             // 
@@ -239,7 +227,7 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(595, 491);
-            this.Controls.Add(this.statusStrip2);
+            this.Controls.Add(this.ProgressBar1);
             this.Controls.Add(this.lab_infoSong);
             this.Controls.Add(this.picBox_buttonNext);
             this.Controls.Add(this.picBox_buttonPlay);
@@ -265,8 +253,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPrev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonNext)).EndInit();
-            this.statusStrip2.ResumeLayout(false);
-            this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,8 +278,7 @@
         private System.Windows.Forms.ToolStripMenuItem sETUPCONFIGToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog folder_LIB_MUSIC;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ProgressBar ProgressBar1;
 
     }
 }

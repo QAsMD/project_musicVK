@@ -28,7 +28,6 @@ namespace VK_MUSIC_APP
         private int move_music_list = 0;
         private NetworkApiVK lib_api;
         private int time_Passed = 0; // времени прошло с начала трека
-        private int iTime_max = 300; //общая длина трека //300 взято для проверки
         #endregion
         public Form1()
         {
@@ -59,6 +58,7 @@ namespace VK_MUSIC_APP
         {
             htCollect_Audio = XML_PARSE(lib_api.audio_get());
             string url_music = htCollect_Audio[move_music_list]["url"].ToString();
+            ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
             pl.Open(url_music);
         }
 
@@ -134,6 +134,7 @@ namespace VK_MUSIC_APP
             if (pl.IsOpen() == false)
             {
                 pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
+                ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
                 lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
                 pl.Play(false);
             }
@@ -153,6 +154,7 @@ namespace VK_MUSIC_APP
             {
                 pl.Close();
                 pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
+                ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
                 lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
                 pl.Play(false);
             }
@@ -177,7 +179,7 @@ namespace VK_MUSIC_APP
         private void timer1_Tick(object sender, EventArgs e)
         {
             time_Passed++;
-            toolStripProgressBar1.Value = iTime_max - time_Passed;
+            ProgressBar1.Value = time_Passed;
         }
     }
 }
