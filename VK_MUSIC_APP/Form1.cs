@@ -142,9 +142,7 @@ namespace VK_MUSIC_APP
         private void lIBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             folder_LIB_MUSIC.ShowDialog();
-            IDictionary<string, string> lib_dict = new Dictionary<string, string>();
-            lib_dict.Add("library", folder_LIB_MUSIC.SelectedPath);
-            builder.write_data_file(lib_dict);
+            builder.write_data_file(new Dictionary<string, string>() { { "library", folder_LIB_MUSIC.SelectedPath } });
         }
     }
 }
