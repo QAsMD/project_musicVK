@@ -20,3 +20,6 @@ C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные до
 C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные документы\project_git\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.Settings.resources
 C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные документы\project_git\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.SetUpMusic.resources
 C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные документы\project_git\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.csproj.GenerateResource.Cache
+D:\!универ\инфа\Grisha\project_musicVK\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe.config
+D:\!универ\инфа\Grisha\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.exe
+D:\!универ\инфа\Grisha\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.pdb
