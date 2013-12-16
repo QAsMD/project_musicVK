@@ -23,3 +23,13 @@ C:\Users\romanginatullin\AppData\Roaming\Local Libraries\Локальные до
 D:\!универ\инфа\Grisha\project_musicVK\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe.config
 D:\!универ\инфа\Grisha\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.exe
 D:\!универ\инфа\Grisha\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.pdb
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe.config
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.exe
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.pdb
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.exe
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\bin\Debug\VK_MUSIC_APP.pdb
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.csprojResolveAssemblyReference.cache
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.Form1.resources
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.Properties.Resources.resources
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.SetUpMusic.resources
+Z:\Documents\Visual Studio 2013\Projects\project_musicVK\VK_MUSIC_APP\obj\Debug\VK_MUSIC_APP.csproj.GenerateResource.Cache

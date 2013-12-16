@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mENUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,11 +47,15 @@
             this.picBox_buttonNext = new System.Windows.Forms.PictureBox();
             this.lab_infoSong = new System.Windows.Forms.Label();
             this.folder_LIB_MUSIC = new System.Windows.Forms.FolderBrowserDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPrev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonNext)).BeginInit();
+            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -79,7 +84,7 @@
             this.lIBToolStripMenuItem,
             this.sETUPCONFIGToolStripMenuItem});
             this.sETTINGSToolStripMenuItem.Name = "sETTINGSToolStripMenuItem";
-            this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.sETTINGSToolStripMenuItem.Text = "SETTINGS";
             // 
             // lIBToolStripMenuItem
@@ -98,13 +103,13 @@
             // aBOUTToolStripMenuItem
             // 
             this.aBOUTToolStripMenuItem.Name = "aBOUTToolStripMenuItem";
-            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aBOUTToolStripMenuItem.Text = "ABOUT";
             // 
             // eXITToolStripMenuItem
             // 
             this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
-            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
@@ -205,6 +210,28 @@
             // 
             this.folder_LIB_MUSIC.Description = "Укажите папку для хранения вашей музыкальной коллекции VK.COM";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Maximum = 300;
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1});
+            this.statusStrip2.Location = new System.Drawing.Point(0, 469);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(595, 22);
+            this.statusStrip2.TabIndex = 15;
+            this.statusStrip2.Text = "statusStrip2";
+            this.statusStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip2_ItemClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -212,6 +239,7 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(595, 491);
+            this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.lab_infoSong);
             this.Controls.Add(this.picBox_buttonNext);
             this.Controls.Add(this.picBox_buttonPlay);
@@ -237,6 +265,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPrev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonNext)).EndInit();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,6 +291,9 @@
         private System.Windows.Forms.ToolStripMenuItem lIBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sETUPCONFIGToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog folder_LIB_MUSIC;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.StatusStrip statusStrip2;
 
     }
 }
