@@ -28,6 +28,10 @@ namespace VK_MUSIC_APP
         private int move_music_list = 0;
         private NetworkApiVK lib_api;
         private int time_Passed = 0; // времени прошло с начала трека
+        int minute = 0;
+        int seconds = 0;
+        int minute_pa = 0;
+        int secon_pa = 0;
         #endregion
         public Form1()
         {
@@ -35,7 +39,26 @@ namespace VK_MUSIC_APP
             InitializeComponent();
             start_program();
             lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
+            lab_TimePassed.Text = "0";
+            create_time_remain();
 
+        }
+
+        private void create_time_remain()
+        {
+            minute = 0;
+            int time_remain = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
+            for (int i = 0; i < time_remain; i++)
+            {
+                if (time_remain > 60)
+                    minute++;
+                else
+                { break; }
+                time_remain -= 60;
+            }
+            minute *= -1;
+            seconds = time_remain;
+            lab_TimeRemain.Text = minute.ToString() + "." + time_remain;
         }
 
         private void PreInitializeComponent()
@@ -62,7 +85,7 @@ namespace VK_MUSIC_APP
             pl.Open(url_music);
         }
 
-        
+
         public Hashtable[] XML_PARSE(String XML_DATA)
         {
             XmlReader reader = XmlReader.Create(new StringReader(XML_DATA));
@@ -109,7 +132,7 @@ namespace VK_MUSIC_APP
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
-            if ( pl.IsPaused() == true ) //
+            if (pl.IsPaused() == true) //
             {
                 pl.Play(true);
                 timer1.Start();
@@ -119,13 +142,20 @@ namespace VK_MUSIC_APP
                 pl.Pause();
                 timer1.Stop();
             }
-                
-           
+
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            next_song();
+        }
+
+        private void next_song()
+        {
             time_Passed = 0; //обнуляем счетчик времени 
+            minute_pa = 0;
+            secon_pa = 0;
             timer1.Start();
 
             if (move_music_list < htCollect_Audio.Length) { move_music_list++; };
@@ -133,6 +163,8 @@ namespace VK_MUSIC_APP
                 pl.Close();
             if (pl.IsOpen() == false)
             {
+                pl.Close();
+                create_time_remain();
                 pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
                 ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
                 lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
@@ -140,19 +172,22 @@ namespace VK_MUSIC_APP
             }
         }
 
-        
+
         private void picBox_buttonPrev_Click(object sender, EventArgs e)
         {
-            
+
             time_Passed = 0;
+            minute_pa = 0;
+            secon_pa = 0;
             timer1.Start();
-            
+
             if (move_music_list > 0) move_music_list--;
             if (pl.IsOpen() == true)
                 pl.Close();
             if (pl.IsOpen() == false)
             {
                 pl.Close();
+                create_time_remain();
                 pl.Open(htCollect_Audio[move_music_list]["url"].ToString());
                 ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
                 lab_infoSong.Text = "Artist: " + htCollect_Audio[move_music_list]["artist"].ToString() + "\nSong: " + htCollect_Audio[move_music_list]["title"].ToString();
@@ -166,20 +201,38 @@ namespace VK_MUSIC_APP
             builder.write_data_file(new Dictionary<string, string>() { { "library", folder_LIB_MUSIC.SelectedPath } });
         }
 
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void statusStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             time_Passed++;
-            ProgressBar1.Value = time_Passed;
+            if (ProgressBar1.Value < ProgressBar1.Maximum)
+            {
+                forming_time_remain();
+                forming_time_passed();
+                ProgressBar1.Value = time_Passed;
+            }
+            else
+                next_song();
+        }
+        private void forming_time_remain()
+        {
+            if (seconds != 0)
+                seconds--;
+            else
+            {
+                minute++;
+                seconds = 59;
+            }
+            lab_TimeRemain.Text = minute.ToString() + "." + seconds.ToString();
+        }
+        private void forming_time_passed()
+        {
+            secon_pa++;
+            if (secon_pa == 60)
+            {
+                minute_pa++;
+                secon_pa = 0;
+            }
+            lab_TimePassed.Text = minute_pa.ToString() + "." + secon_pa.ToString();
         }
     }
 }

@@ -49,6 +49,8 @@
             this.folder_LIB_MUSIC = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ProgressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lab_TimeRemain = new System.Windows.Forms.Label();
+            this.lab_TimePassed = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_buttonPrev)).BeginInit();
@@ -198,7 +200,7 @@
             // lab_infoSong
             // 
             this.lab_infoSong.AutoSize = true;
-            this.lab_infoSong.Location = new System.Drawing.Point(21, 297);
+            this.lab_infoSong.Location = new System.Drawing.Point(12, 297);
             this.lab_infoSong.Name = "lab_infoSong";
             this.lab_infoSong.Size = new System.Drawing.Size(66, 24);
             this.lab_infoSong.TabIndex = 13;
@@ -215,10 +217,28 @@
             // 
             // ProgressBar1
             // 
-            this.ProgressBar1.Location = new System.Drawing.Point(25, 178);
+            this.ProgressBar1.Location = new System.Drawing.Point(12, 178);
             this.ProgressBar1.Name = "ProgressBar1";
-            this.ProgressBar1.Size = new System.Drawing.Size(558, 17);
+            this.ProgressBar1.Size = new System.Drawing.Size(571, 17);
             this.ProgressBar1.TabIndex = 16;
+            // 
+            // lab_TimeRemain
+            // 
+            this.lab_TimeRemain.AutoSize = true;
+            this.lab_TimeRemain.Location = new System.Drawing.Point(517, 151);
+            this.lab_TimeRemain.Name = "lab_TimeRemain";
+            this.lab_TimeRemain.Size = new System.Drawing.Size(66, 24);
+            this.lab_TimeRemain.TabIndex = 17;
+            this.lab_TimeRemain.Text = "label1";
+            // 
+            // lab_TimePassed
+            // 
+            this.lab_TimePassed.AutoSize = true;
+            this.lab_TimePassed.Location = new System.Drawing.Point(12, 153);
+            this.lab_TimePassed.Name = "lab_TimePassed";
+            this.lab_TimePassed.Size = new System.Drawing.Size(66, 24);
+            this.lab_TimePassed.TabIndex = 18;
+            this.lab_TimePassed.Text = "label2";
             // 
             // Form1
             // 
@@ -227,6 +247,8 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(595, 491);
+            this.Controls.Add(this.lab_TimePassed);
+            this.Controls.Add(this.lab_TimeRemain);
             this.Controls.Add(this.ProgressBar1);
             this.Controls.Add(this.lab_infoSong);
             this.Controls.Add(this.picBox_buttonNext);
@@ -279,6 +301,8 @@
         private System.Windows.Forms.FolderBrowserDialog folder_LIB_MUSIC;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ProgressBar ProgressBar1;
+        private System.Windows.Forms.Label lab_TimeRemain;
+        private System.Windows.Forms.Label lab_TimePassed;
 
     }
 }
