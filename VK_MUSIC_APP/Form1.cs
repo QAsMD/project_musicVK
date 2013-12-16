@@ -79,12 +79,12 @@ namespace VK_MUSIC_APP
 
         private void start_program()
         {
+            AvatarUser.Load(lib_api.user_get());
             htCollect_Audio = XML_PARSE(lib_api.audio_get());
             string url_music = htCollect_Audio[move_music_list]["url"].ToString();
             ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
             pl.Open(url_music);
         }
-
 
         public Hashtable[] XML_PARSE(String XML_DATA)
         {
@@ -97,9 +97,6 @@ namespace VK_MUSIC_APP
             reader.Read();
             Hashtable[] dict_audio = new Hashtable[Convert.ToInt32(reader.Value)];
             lab_CountAudio.Text = Convert.ToString(reader.Value);
-            reader.ReadToFollowing("photo");
-            reader.Read();
-            AvatarUser.LoadAsync(reader.Value);
             reader.ReadToFollowing("name");
             reader.Read();
             lab_NameUser.Text = reader.Value;
@@ -172,7 +169,6 @@ namespace VK_MUSIC_APP
             }
         }
 
-
         private void picBox_buttonPrev_Click(object sender, EventArgs e)
         {
 
@@ -198,7 +194,7 @@ namespace VK_MUSIC_APP
         private void lIBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             folder_LIB_MUSIC.ShowDialog();
-            builder.write_data_file(new Dictionary<string, string>() { { "library", folder_LIB_MUSIC.SelectedPath } });
+            builder.write_data_file(new Dictionary<string, string>() { { "library", folder_LIB_MUSIC.SelectedPath } }, true);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -213,6 +209,7 @@ namespace VK_MUSIC_APP
             else
                 next_song();
         }
+
         private void forming_time_remain()
         {
             if (seconds != 0)
@@ -224,6 +221,7 @@ namespace VK_MUSIC_APP
             }
             lab_TimeRemain.Text = minute.ToString() + "." + seconds.ToString();
         }
+
         private void forming_time_passed()
         {
             secon_pa++;

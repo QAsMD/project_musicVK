@@ -127,31 +127,31 @@
             // lab_AudioText
             // 
             this.lab_AudioText.AutoSize = true;
-            this.lab_AudioText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lab_AudioText.Location = new System.Drawing.Point(121, 62);
+            this.lab_AudioText.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lab_AudioText.Location = new System.Drawing.Point(120, 57);
             this.lab_AudioText.Name = "lab_AudioText";
             this.lab_AudioText.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lab_AudioText.Size = new System.Drawing.Size(222, 30);
+            this.lab_AudioText.Size = new System.Drawing.Size(195, 28);
             this.lab_AudioText.TabIndex = 3;
             this.lab_AudioText.Text = "Всего аудиозаписей:";
             // 
             // lab_CountAudio
             // 
             this.lab_CountAudio.AutoSize = true;
-            this.lab_CountAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lab_CountAudio.Location = new System.Drawing.Point(349, 67);
+            this.lab_CountAudio.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lab_CountAudio.Location = new System.Drawing.Point(311, 62);
             this.lab_CountAudio.Name = "lab_CountAudio";
-            this.lab_CountAudio.Size = new System.Drawing.Size(130, 25);
+            this.lab_CountAudio.Size = new System.Drawing.Size(119, 23);
             this.lab_CountAudio.TabIndex = 7;
             this.lab_CountAudio.Text = "count_audio";
             // 
             // lab_NameUser
             // 
             this.lab_NameUser.AutoSize = true;
-            this.lab_NameUser.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lab_NameUser.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lab_NameUser.Location = new System.Drawing.Point(121, 39);
             this.lab_NameUser.Name = "lab_NameUser";
-            this.lab_NameUser.Size = new System.Drawing.Size(98, 23);
+            this.lab_NameUser.Size = new System.Drawing.Size(85, 18);
             this.lab_NameUser.TabIndex = 8;
             this.lab_NameUser.Text = "NameUser";
             // 

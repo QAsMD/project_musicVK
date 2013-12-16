@@ -22,12 +22,13 @@ namespace VK_MUSIC_APP
             if (File.Exists(path_file) == true)
             {
                 StreamReader stream_read = new StreamReader(path_file);
-                string data_output = stream_read.ReadLine();
-                var data_process = data_output.Split(':');
-                parametrs_program.Add("uid", data_process[1]);
-                data_output = stream_read.ReadLine();
-                data_process = data_output.Split(':');
-                parametrs_program.Add("token", data_process[1]);
+                string temp;
+                while((temp = stream_read.ReadLine())!=null)
+                {
+                    string key = temp.Substring(0, temp.IndexOf(':'));
+                    string value = temp.Substring(temp.IndexOf(':')+1);
+                    parametrs_program.Add(key, value);
+                }
                 //parametrs_program.Add("id_user", id_user);
                 //parametrs_program.Add("token", token);
                 //parametrs_program.Add("lib_music", library);
@@ -42,9 +43,9 @@ namespace VK_MUSIC_APP
             return parametrs_program;
         }
 
-        public void write_data_file(IDictionary<string, string> info_parameter)
+        public void write_data_file(IDictionary<string, string> info_parameter, bool append)
         {
-            StreamWriter WriteData = new StreamWriter("config.txt");
+            StreamWriter WriteData = new StreamWriter(path_file, append);
             foreach (string key in info_parameter.Keys)
             {
                 WriteData.Write(key + ":" + info_parameter[key] + "\n");
