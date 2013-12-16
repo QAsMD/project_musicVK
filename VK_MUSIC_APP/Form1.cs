@@ -106,7 +106,7 @@ namespace VK_MUSIC_APP
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (pl.IsPaused() == true) //privet
+            if (pl.IsPaused() == true) //
                 pl.Play(true);
             else
                 pl.Pause();
