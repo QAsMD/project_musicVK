@@ -27,6 +27,7 @@ namespace VK_MUSIC_APP
         private Hashtable[] htCollect_Audio;
         private int move_music_list = 0;
         private NetworkApiVK lib_api;
+        private FormPlaylist Playlist;
         private int time_Passed = 0; // времени прошло с начала трека
         int minute = 0;
         int seconds = 0;
@@ -81,6 +82,7 @@ namespace VK_MUSIC_APP
         {
             AvatarUser.Load(lib_api.user_get());
             htCollect_Audio = XML_PARSE(lib_api.audio_get());
+            Playlist = new FormPlaylist(htCollect_Audio);
             string url_music = htCollect_Audio[move_music_list]["url"].ToString();
             ProgressBar1.Maximum = Convert.ToInt32(htCollect_Audio[move_music_list]["duration"]);
             pl.Open(url_music);
@@ -231,6 +233,11 @@ namespace VK_MUSIC_APP
                 secon_pa = 0;
             }
             lab_TimePassed.Text = minute_pa.ToString() + "." + secon_pa.ToString();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Playlist.ShowDialog();
         }
     }
 }
